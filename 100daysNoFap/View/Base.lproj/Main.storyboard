@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,32 +14,32 @@
             <objects>
                 <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TuL-Y2-TdG">
-                                <rect key="frame" x="20" y="44" width="374" height="798"/>
+                                <rect key="frame" x="16" y="0.0" width="288" height="548"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" image="icon100" translatesAutoresizingMaskIntoConstraints="NO" id="SO6-xr-J0i">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="527"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="341"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-b9-i24">
-                                        <rect key="frame" x="0.0" y="527" width="374" height="211"/>
+                                        <rect key="frame" x="0.0" y="341" width="288" height="147"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Streak" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="klw-HW-yfl">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="36"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="38"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0 days" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="CQi-2F-stE">
-                                                <rect key="frame" x="0.0" y="53" width="374" height="52"/>
+                                                <rect key="frame" x="0.0" y="37" width="288" height="36"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="38"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="AEi-9F-i1j">
-                                                <rect key="frame" x="-2" y="106" width="378" height="53"/>
+                                                <rect key="frame" x="-2" y="74" width="292" height="37"/>
                                                 <color key="minimumTrackTintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="maximumTrackTintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="thumbTintColor" red="0.73333333329999995" green="0.0" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,12 +48,12 @@
                                                 </connections>
                                             </slider>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-l7-u64">
-                                                <rect key="frame" x="0.0" y="159" width="374" height="52"/>
+                                                <rect key="frame" x="0.0" y="111" width="288" height="36"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt6-Im-gJA">
-                                        <rect key="frame" x="0.0" y="738" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="488" width="288" height="60"/>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="zF8-VC-091"/>
@@ -85,7 +85,6 @@
                     </view>
                     <connections>
                         <outlet property="daysLabel" destination="CQi-2F-stE" id="szN-GF-0vx"/>
-                        <segue destination="AgM-N0-drB" kind="presentation" identifier="ShowMainViewController" id="mqF-05-dhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,21 +96,61 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="AgM-N0-drB" customClass="MainViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AHe-Ar-6UA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6I-hm-IAn">
-                                <rect key="frame" x="184" y="180" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="AgM-N0-drB" eventType="touchUpInside" id="yvL-me-dyB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oG1-ri-RPC">
+                                <rect key="frame" x="16" y="0.0" width="288" height="568"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bjh-I6-Eiv">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="568"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ma3-7j-SSe">
+                                                <rect key="frame" x="0.0" y="273" width="25.5" height="22"/>
+                                                <color key="tintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leftArrowPressed:" destination="AgM-N0-drB" eventType="touchUpInside" id="KC8-1A-Roe"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdu-2r-eRh">
+                                                <rect key="frame" x="104" y="263.5" width="80" height="41"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                                <color key="textColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXy-ti-Ayr">
+                                                <rect key="frame" x="262.5" y="260" width="25.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
+                                                <color key="tintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="arrow.right" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rightArrowPressed:" destination="AgM-N0-drB" eventType="touchUpInside" id="ezZ-Rq-2Gj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rFx-te-7EW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.01215406973" green="0.0" blue="0.1776128709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rFx-te-7EW" firstAttribute="bottom" secondItem="oG1-ri-RPC" secondAttribute="bottom" id="JSt-c7-olg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oG1-ri-RPC" secondAttribute="trailing" id="R2o-bq-l4Q"/>
+                            <constraint firstItem="oG1-ri-RPC" firstAttribute="leading" secondItem="AHe-Ar-6UA" secondAttribute="leadingMargin" id="TxY-hN-U2j"/>
+                            <constraint firstItem="oG1-ri-RPC" firstAttribute="top" secondItem="rFx-te-7EW" secondAttribute="top" id="j6a-lG-g7k"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dayLabel" destination="Cdu-2r-eRh" id="Ied-JF-w8s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IW3-DD-FvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,9 +158,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon100" width="341.33334350585938" height="341.33334350585938"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="icon100" width="341" height="341"/>
     </resources>
 </document>

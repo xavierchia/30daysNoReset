@@ -8,17 +8,26 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    var noFapBrain = NoFapBrain()
+    var viewDay = 0
+    
+    @IBOutlet weak var dayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        print(defaults.integer(forKey: "startingDays"))
+        viewDay = noFapBrain.getDayNumber()
+        dayLabel.text = "Day \(viewDay)"
 
     }
+    @IBAction func leftArrowPressed(_ sender: UIButton) {
+        viewDay = noFapBrain.decreaseViewDay(viewDay)
+        dayLabel.text = "Day \(viewDay)"
+    }
     
+    @IBAction func rightArrowPressed(_ sender: UIButton) {
+        viewDay = noFapBrain.increaseViewDay(viewDay)
+        dayLabel.text = "Day \(viewDay)"
+    }
 }
