@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,19 +12,19 @@
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TuL-Y2-TdG">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="44" width="374" height="798"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" image="icon100" translatesAutoresizingMaskIntoConstraints="NO" id="SO6-xr-J0i">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="547"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="527"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-b9-i24">
-                                        <rect key="frame" x="0.0" y="547" width="374" height="211"/>
+                                        <rect key="frame" x="0.0" y="527" width="374" height="211"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Streak" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="klw-HW-yfl">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
@@ -52,7 +53,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt6-Im-gJA">
-                                        <rect key="frame" x="0.0" y="758" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="738" width="374" height="60"/>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="zF8-VC-091"/>
@@ -76,7 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.01215406973" green="0.0" blue="0.1776128709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TuL-Y2-TdG" secondAttribute="bottom" id="0qh-Uk-Jex"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TuL-Y2-TdG" secondAttribute="bottom" constant="20" id="0qh-Uk-Jex"/>
                             <constraint firstItem="TuL-Y2-TdG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EWo-zp-6Wu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TuL-Y2-TdG" secondAttribute="trailing" id="Siu-eY-hmw"/>
                             <constraint firstItem="TuL-Y2-TdG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y5B-8l-gkz"/>
@@ -94,7 +95,7 @@
         <!--Main View Controller-->
         <scene sceneID="hwd-lL-y2B">
             <objects>
-                <viewController id="AgM-N0-drB" customClass="MainViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="AgM-N0-drB" customClass="MainViewController" customModule="_00daysNoFap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AHe-Ar-6UA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

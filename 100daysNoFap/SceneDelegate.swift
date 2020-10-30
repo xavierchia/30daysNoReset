@@ -17,6 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        // add these lines
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // if user is logged in before
+        if UserDefaults.standard.string(forKey: "startingDays") != nil {
+            // instantiate the main tab bar controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let mainController = storyboard.instantiateViewController(identifier: "MainViewController")
+            window?.rootViewController = mainController
+        } else {
+            // if user isn't logged in
+            // instantiate the navigation controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let startViewController = storyboard.instantiateViewController(identifier: "StartViewController")
+            window?.rootViewController = startViewController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +61,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        
+        // change the root view controller to your specific view controller
+        window.rootViewController = vc
     }
 
 

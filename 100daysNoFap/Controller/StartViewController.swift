@@ -28,7 +28,14 @@ class StartViewController: UIViewController {
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
         let defaults = UserDefaults.standard
-        defaults.set(days, forKey:"startingDays")
+        defaults.set(days, forKey: "startingDays")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
+        
+        // This is to get the SceneDelegate object from your view controller
+        // then call the change root view controller function to change to main tab bar
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainViewController)
         
         self.performSegue(withIdentifier: "ShowMainViewController", sender: self)
     }
