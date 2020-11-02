@@ -21,21 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // ** UNCOMMENT THIS DURING PRODUCTION **
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        // if user is logged in before
-//        if UserDefaults.standard.string(forKey: "startingDays") != nil {
-//            // instantiate the main view controller and set it as root view controller
-//            // using the storyboard identifier we set earlier
-//            let mainController = storyboard.instantiateViewController(identifier: "MainViewController")
-//            window?.rootViewController = mainController
-//        } else {
-//            // if user isn't logged in
-//            // instantiate the start view controller and set it as root view controller
-//            // using the storyboard identifier we set earlier
-//            let startViewController = storyboard.instantiateViewController(identifier: "StartViewController")
-//            window?.rootViewController = startViewController
-//        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        // if user is logged in before
+        if UserDefaults.standard.string(forKey: "startingDays") != nil {
+            // instantiate the main view controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let mainController = storyboard.instantiateViewController(identifier: "MainViewController")
+            window?.rootViewController = mainController
+        } else {
+            // if user isn't logged in
+            // instantiate the start view controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let startViewController = storyboard.instantiateViewController(identifier: "StartViewController")
+            window?.rootViewController = startViewController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -27,11 +27,12 @@ class StartViewController: UIViewController {
     }
         
     @IBAction func goButtonPressed(_ sender: UIButton) {
+        // Save the starting days and the starting date to userDefault
         let defaults = UserDefaults.standard
         defaults.set(days, forKey: "startingDays")
         defaults.set(Date(), forKey: "startingDate")
         
-        
+        // Once onboarding is done, change rootViewController to mainViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = storyboard.instantiateViewController(identifier: "MainViewController")
         
