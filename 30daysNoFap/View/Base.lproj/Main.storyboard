@@ -39,7 +39,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="AEi-9F-i1j">
+                                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="AEi-9F-i1j">
                                                 <rect key="frame" x="-2" y="106" width="378" height="53"/>
                                                 <color key="minimumTrackTintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="maximumTrackTintColor" red="0.96078431369999995" green="0.51764705879999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>

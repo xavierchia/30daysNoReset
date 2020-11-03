@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         enableSwipe()
         checkDayChangedTimerSendAlert()
+        overrideUserInterfaceStyle = .dark  
         
 //        Get the last saved day number, and update screen
         viewDay = UserDefaults.standard.integer(forKey: "days")
