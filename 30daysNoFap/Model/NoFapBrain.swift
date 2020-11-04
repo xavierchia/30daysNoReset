@@ -39,11 +39,27 @@ struct NoFapBrain {
     }
     
     func increaseViewDay(_ viewDay: Int) -> Int {
-        if viewDay < daysData.count {
+        if viewDay < daysData.count - 1 {
             let increasedViewDay = viewDay + 1
             return increasedViewDay
         }
         return viewDay
+    }
+    
+    func getNumberOfRows(viewDay: Int) -> Int {
+        if viewDay > UserDefaults.standard.integer(forKey: "days") {
+            return 2
+        } else {
+            return self.daysData[Int(viewDay)].count
+        }
+    }
+    
+    func getDayData(viewDay: Int, row: Int) -> Post {
+        if viewDay > UserDefaults.standard.integer(forKey: "days") {
+            return self.lockedData[row]
+        } else {
+            return self.daysData[Int(viewDay)][row]
+        }
     }
     
     let lockedData = [
@@ -138,7 +154,7 @@ struct NoFapBrain {
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "day 14 or 2 weeks!", body: "Its been 2 weeks now. Feeling good & still in control. New stuff is happening, usually im waking up earlier than my alarm, with a huge boner. Had a lot of dreams with hot girls in them and in the dreams im trying to have sex with them. Came to the conclusion its wet dreams but so far not had a nightfall, so Ive decided to just let them come and go as they please. Ill control my waking hours with not relapsing and my subconscious will go on doing whatever the f its doing. The dreams dont bother me at all. Another thing after 2 weeks of thoughtfulness, meditation & change of habits is that i feel that i dont try to live my life like life is a climb on the ladder. I got stuck in traffic yesterday & i put on some nice music, did some breathing exercises and actually kinda enjoyed being stuck there for a while. Not racing towards goals that are always moving on front of you on the horizon but being more 'here and now' is a nice new mindset that was always something i brushed off as hippie shit, but now im realizing that if im unable to enjoy the state i am in RIGHT NOW, how the f am i going to enjoy myself in the coming days, weeks or even years from now? Its hard to type it out for me in a good fashion since im nowhere near a monk or spiritual guide, but something in me feels like it has kinda 'clicked' and my days just keep floating on in a very enjoyable fashion.\n\nfor those that haven't already, try meditation!\n\nu/throwaway786324, reddit"),
+            Post(header: "Day 14 or 2 weeks!", body: "Its been 2 weeks now. Feeling good & still in control. New stuff is happening, usually im waking up earlier than my alarm, with a huge boner. Had a lot of dreams with hot girls in them and in the dreams im trying to have sex with them. Came to the conclusion its wet dreams but so far not had a nightfall, so Ive decided to just let them come and go as they please. Ill control my waking hours with not relapsing and my subconscious will go on doing whatever the f its doing. The dreams dont bother me at all.\n\nAnother thing after 2 weeks of thoughtfulness, meditation & change of habits is that i feel that i dont try to live my life like life is a climb on the ladder. I got stuck in traffic yesterday & i put on some nice music, did some breathing exercises and actually kinda enjoyed being stuck there for a while. Not racing towards goals that are always moving on front of you on the horizon but being more 'here and now' is a nice new mindset that was always something i brushed off as hippie shit, but now im realizing that if im unable to enjoy the state i am in RIGHT NOW, how the f am i going to enjoy myself in the coming days, weeks or even years from now? \n\nIts hard to type it out for me in a good fashion since im nowhere near a monk or spiritual guide, but something in me feels like it has kinda 'clicked' and my days just keep floating on in a very enjoyable fashion.\n\nfor those that haven't already, try meditation!\n\nu/throwaway786324, reddit"),
             Post(header: "Day 14. Everyone was staring at me", body: "Because I cut my own hair and it turned out to be funny\n\nu/Flaring_Sagittarius, reddit"),
             Post(header: "Day 14", body: "Two weeks of NoFap done!\n\nI had an okay day today. No real urges to watch porn or masturbate. I started my morning well with a cold shower and some time playing the keyboard. In the afternoon I visited my grandparents. It was nice to have a chat with them. I also spent a lot of time reading today. At the end of the day I felt a little down. I'm a little stressed about schoolwork and whatnot and it became a little too much. I took some time alone, took a shower and spent five minutes meditating and I feel a lot better now.\n\nAfter two weeks I feel more confident again. I also feel stronger emotions, which I consider a good thing. I feel more motivated to work on myself and become a better person, for myself and the people around me.\n\nNow let's keep going.\n\nSee you tomorrow.\n\nu/Hellow11, reddit")
         ],

@@ -61,8 +61,6 @@ class MainViewController: UIViewController {
     }
     
     func updateUI() {
-//        noFapBrain.days = 18
-//        viewDay = 18
         dayLabel.text = "Day \(viewDay)"
         tableView.reloadData()
     }
@@ -96,30 +94,18 @@ extension MainViewController: UITableViewDelegate {
 }
 
 
-// Hide this logic in NoFapBrain
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewDay > UserDefaults.standard.integer(forKey: "days") {
-            return 2
-        } else {
-            return noFapBrain.daysData[Int(viewDay)].count
-        }
+        return noFapBrain.getNumberOfRows(viewDay: viewDay)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.numberOfLines = 0
-        if viewDay > UserDefaults.standard.integer(forKey: "days") {
-            let lockedData = noFapBrain.lockedData[indexPath.row]
-            cell.textLabel?.text = lockedData.header
-            cell.detailTextLabel?.text = lockedData.body
-        } else {
-            let dayData = noFapBrain.daysData[Int(viewDay)][indexPath.row]
-            cell.textLabel?.text = dayData.header
-            cell.detailTextLabel?.text = dayData.body
-        }
+                
+        let dayData = noFapBrain.getDayData(viewDay: viewDay, row: indexPath.row)
+        cell.textLabel?.text = dayData.header
+        cell.detailTextLabel?.text = dayData.body
         
         return cell
     }
