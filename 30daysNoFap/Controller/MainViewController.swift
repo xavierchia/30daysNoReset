@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
         let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             if self.noFapBrain.checkDayChanged() {
                 let alert = UIAlertController(title: "Congrats!🥳", message: "You made it to Day \(self.noFapBrain.getDayNumber())\nGo to latest day?", preferredStyle: .alert)
-                
+
                 UserDefaults.standard.set(self.noFapBrain.getDayNumber(), forKey: "days")
 
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
