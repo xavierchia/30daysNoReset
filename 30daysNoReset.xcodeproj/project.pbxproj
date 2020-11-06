@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		9524E506254FD053007E72BA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		952BDBCF254B8733005BF1D3 /* 30daysNoFap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 30daysNoFap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		952BDBCF254B8733005BF1D3 /* 30daysNoReset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 30daysNoReset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		952BDBD2254B8733005BF1D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		952BDBD4254B8733005BF1D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		952BDBD6254B8733005BF1D3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		952BDBC6254B8732005BF1D3 = {
 			isa = PBXGroup;
 			children = (
-				952BDBD1254B8733005BF1D3 /* 30daysNoFap */,
+				952BDBD1254B8733005BF1D3 /* 30daysNoReset */,
 				952BDBD0254B8733005BF1D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		952BDBD0254B8733005BF1D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				952BDBCF254B8733005BF1D3 /* 30daysNoFap.app */,
+				952BDBCF254B8733005BF1D3 /* 30daysNoReset.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		952BDBD1254B8733005BF1D3 /* 30daysNoFap */ = {
+		952BDBD1254B8733005BF1D3 /* 30daysNoReset */ = {
 			isa = PBXGroup;
 			children = (
 				952BDBD2254B8733005BF1D3 /* AppDelegate.swift */,
@@ -71,7 +71,7 @@
 				952BDBDD254B8734005BF1D3 /* LaunchScreen.storyboard */,
 				952BDBE0254B8734005BF1D3 /* Info.plist */,
 			);
-			path = 30daysNoFap;
+			path = 30daysNoReset;
 			sourceTree = "<group>";
 		};
 		952BDBE8254B8789005BF1D3 /* View */ = {
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		952BDBCE254B8733005BF1D3 /* 30daysNoFap */ = {
+		952BDBCE254B8733005BF1D3 /* 30daysNoReset */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 952BDBE3254B8734005BF1D3 /* Build configuration list for PBXNativeTarget "30daysNoFap" */;
+			buildConfigurationList = 952BDBE3254B8734005BF1D3 /* Build configuration list for PBXNativeTarget "30daysNoReset" */;
 			buildPhases = (
 				952BDBCB254B8733005BF1D3 /* Sources */,
 				952BDBCC254B8733005BF1D3 /* Frameworks */,
@@ -115,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = 30daysNoFap;
+			name = 30daysNoReset;
 			productName = 100daysNoFap;
-			productReference = 952BDBCF254B8733005BF1D3 /* 30daysNoFap.app */;
+			productReference = 952BDBCF254B8733005BF1D3 /* 30daysNoReset.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 952BDBCA254B8732005BF1D3 /* Build configuration list for PBXProject "30daysNoFap" */;
+			buildConfigurationList = 952BDBCA254B8732005BF1D3 /* Build configuration list for PBXProject "30daysNoReset" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,7 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				952BDBCE254B8733005BF1D3 /* 30daysNoFap */,
+				952BDBCE254B8733005BF1D3 /* 30daysNoReset */,
 			);
 		};
 /* End PBXProject section */
@@ -324,12 +324,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4CL79J5Y8;
-				INFOPLIST_FILE = 30daysNoFap/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = 30daysNoReset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xavierchia.-30daysNoFap";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xavierchia.-30daysNoReset";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,12 +344,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4CL79J5Y8;
-				INFOPLIST_FILE = 30daysNoFap/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = 30daysNoReset/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xavierchia.-30daysNoFap";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xavierchia.-30daysNoReset";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -358,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		952BDBCA254B8732005BF1D3 /* Build configuration list for PBXProject "30daysNoFap" */ = {
+		952BDBCA254B8732005BF1D3 /* Build configuration list for PBXProject "30daysNoReset" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				952BDBE1254B8734005BF1D3 /* Debug */,
@@ -367,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		952BDBE3254B8734005BF1D3 /* Build configuration list for PBXNativeTarget "30daysNoFap" */ = {
+		952BDBE3254B8734005BF1D3 /* Build configuration list for PBXNativeTarget "30daysNoReset" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				952BDBE4254B8734005BF1D3 /* Debug */,
