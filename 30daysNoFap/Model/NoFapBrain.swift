@@ -8,7 +8,7 @@
 import UIKit
 
 struct NoFapBrain {
-    
+        
     func getDayNumber() -> Int {
         let startingDays = UserDefaults.standard.integer(forKey: "startingDays")
         let startingDate = UserDefaults.standard.object(forKey: "startingDate") as! Date
@@ -22,6 +22,10 @@ struct NoFapBrain {
         let daysPassed = calendar.dateComponents([.day], from: startingDateStart, to: todayStart).day!
         
         let dayCount = startingDays + daysPassed
+        
+        if dayCount > 30 {
+            return 30
+        }
         
         return dayCount
     }
@@ -48,145 +52,146 @@ struct NoFapBrain {
     
     func getNumberOfRows(viewDay: Int) -> Int {
         if viewDay > UserDefaults.standard.integer(forKey: "days") {
-            return self.lockedData.count
+            return 2
         } else {
             return self.daysData[Int(viewDay)].count
         }
     }
     
     func getDayData(viewDay: Int, row: Int) -> Post {
+        
+        let lockedData = [
+            Post(header: "", body: ""),
+            Post(header: "🙇🏻‍♂️ Come back on day \(viewDay) to unlock 🔓", body: "Perserverance is not a long race; it is many short races one after the other\n\nWalter Elliot.")
+        ]
+        
         if viewDay > UserDefaults.standard.integer(forKey: "days") {
-            return self.lockedData[row]
+            return lockedData[row]
         } else {
-            return self.daysData[Int(viewDay)][row]
+            return daysData[Int(viewDay)][row]
         }
     }
-    
-    let lockedData = [
-        Post(header: "", body: ""),
-        Post(header: "🙇🏻‍♂️ Come back later to unlock 🔓", body: "Perserverance is not a long race; it is many short races one after the other\n\nWalter Elliot.")
-    ]
-    
+
     let daysData = [
         [
             Post(header: "", body: ""),
-            Post(header: "Day 0: Not Gonna Fail This Time", body: "I can do this.\n\nEDIT: Let's all do this together.\n\nu/lianeric, reddit"),
-            Post(header: "Day 0", body: "This could be the start of something special\n\nu/success_ni_decision, reddit"),
-            Post(header: "DAY 0", body: "Man cannot remake himself without suffering, for he is both the marble and the sculptor.\n\nu/MonsieurRushB, reddit")
+            Post(header: "Calvin Coolidge", body: "Nothing in this world can take the place of persistence. Talent will not; nothing is more common than unsuccessful men with talent. Genius will not; unrewarded genius is almost a proverb. Education will not; the world is full of educated derelicts. Persistence and determination alone are omnipotent. The slogan 'Press On!’ has solved and always will solve the problems of the human race."),
+            Post(header: "Roy T. Bennett", body: "It doesn’t matter how many times you get knocked down. All that matters is you get up one more time than you were knocked down."),
+            Post(header: "Winston S. Churchill", body: "Success is not final, failure is not fatal: it is the courage to continue that counts.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "After a decade of PMO, today is the day I quit. Today is day 1.", body: "I feel mentally and physically exhausted right now, and I know tonight is going to be bad. But I’m going to use all my willpower to pull through 🤞🏽.\n\nu/skxnnykxdjayjay, reddit"),
-            Post(header: "Day 1", body: "I’ve been lurking around here but I’m here to say I’m gonna be starting my journey today I want to make something out of myself and become someone more productive and motivated\n\nu/Whatadub, reddit"),
-            Post(header: "Day 1 of No Fap completed successfully !", body: "I have completed day 1 of no fap successfully.\n\nu/Sarthaknotnice, reddit")
+            Post(header: "Roy T. Bennett", body: "Keep going. Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end."),
+            Post(header: "Mary Anne Radmacher", body: "Courage doesn’t always roar, sometimes it’s the quiet voice at the end of the day whispering ‘I will try again tomorrow"),
+            Post(header: "Randy Pausch", body: "The brick walls are there for a reason. The brick walls are not there to keep us out. The brick walls are there to give us a chance to show how badly we want something. Because the brick walls are there to stop the people who don’t want it badly enough. They’re there to stop the other people.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "I finally did it. After trying for so long , I managed to reach day 2 !", body: "After trying for so long , I finally did it guys. Instead of fighting the urge , I redirected it to something productive . I started learning Georgian and cooked some food.\n\nI am now ready to keep learning new stuff 💪💪💪\n\nu/xxxtentacion22, reddit"),
-            Post(header: "Day 2 complete. Feeling good!", body: "I have 2 days and 1 night of my no PMO journey. Honestly. It’s hard. I thought quitting substances was hard. Nah. This takes way more energy. I have to be mindful about everything.\n\nIf I’m watching YouTube, I will literally block any content that may have a trigger anywhere in. I’ve deleted ALL social media. Such as Facebook, Twitter, Snapchat, Instagram etc. I have reddit solely for this community.\n\nI’m confident this journey will change that for me.\n\nThank you all for this community and support so far! Good luck everyone!\n\nu/SPC1stClass, reddit"),
-            Post(header: "This isn't a cry for help. This isn't asking for advice. This is me just being happy cause I'm on day 2 and I fought off an urge.", body: "It's been months since I last tried to stop. I'd given up. I stopped believing in my old faith, I was stressed with graduate studies and work was piling on. It formed a perfect storm that lasted from early June till now. But things changed.\n\nI started talking to my ex again. We're back to being friends like we were before we started dating and it feels good. She's an amazing person and knowing her reminded me of what life without addiction was like: I felt better, accomplished more, and had more energy. She's the perfect person to give me motivation to stop: not because I want her back, but because she reminds me that I can't continue to do this if I want to fully respect and love whoever it is I'll be with one day.\n\nu/RaisingWildKnights, reddit")
+            Post(header: "Dale Carnegie", body: "Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all."),
+            Post(header: "Tom Hiddleston", body: "You never know what’s around the corner. It could be everything. Or it could be nothing. You keep putting one foot in front of the other, and then one day you look back and you’ve climbed a mountain."),
+            Post(header: "Roy T. Bennett", body: "When the going gets tough, put one foot in front of the other and just keep going. Don’t give up.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 3 and it's getting tougher", body: "In the beginning, I was like a young soldier going into war. I was happy and optimistic, but now it's getting tough. Is anybody else getting this feeling?\n\nu/Nickan04, reddit"),
-            Post(header: "Day 3 and I can fluently talk again", body: "I don’t know if this is placebo or not but this is the best thing which could have happened to me.\n\nI’m 24 and yesterday I was moderating a meeting with 30+ people online and usually I have to think about every single word I say, I used to sometimes write word by word down before the meeting starts so that I can basically just read it off the paper. Yesterday was all different. I could just talk fluently without notes and was even witty sometimes. Afterwards I had a phone call with a female which is kind of my colleague of mine for more than 3 hours and we just talked and talked and talked. Usually I have a very hard time finding topics to speak about and I just try very hard not to create a weird long moment of silence, but this time I didn’t have to.\n\nI used to do PMO 4-6 times a day and now I’m on my day 4 and it might be only placebo because usually the effects start to kick in later based on what I read here, but I just hope this continues for the next weeks, months and years of my life.\n\nDon’t give up guys, it’s totally worth it\n\nu/nomore9919, reddit"),
-            Post(header: "Being on Day 3 is already better than most people.", body: "If you have just relapsed, don't give up! Pick yourself up. Most people cannot even stand two days without PMO. Instead of being frustrated over losing the number of days, you should focus on the journey. Don't give up just because you stumbled.\n\nu/Mr_SunW, reddit")
+            Post(header: "James A. Michener", body: "Character consists of what you do on the third and fourth tries."),
+            Post(header: "John Di Lemme", body: "They key of persistence opens all door closed by resistence"),
+            Post(header: "Thomas A. Edison", body: "Genius is one percent inspiration, ninety-nine percent perspiration.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Started day 4", body: "I know it's not that much, but this is a real milestone for me!! Keep strong, everyone!\n\nu/ConfettiBazooka, reddit"),
-            Post(header: "Day 4", body: "It was a pretty great day today. I got to socialize a lot with new people, which gave me a lot of joy and energy. I felt a bit tempted going through my old camera roll today, but I actively chose not to dwell on the pictures and to permanently delete them right away. Being intentional about the decisions I make daily has helped a lot. I got this!\n\nu/wanderinggopher, reddit"),
-            Post(header: "Day 4 completed 🙏🔥", body: "thanks for the support\n\nu/n0_nut, reddit")
+            Post(header: "Thomas A. Edison", body: "The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense."),
+            Post(header: "Winston S. Churchill", body: "If you are going through hell, keep going."),
+            Post(header: "Hal Borland", body: "Knowing trees, I understand the meaning of patience. Knowing grass, I can appreciate persistence.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "I am in Day 5, but is something", body: "Yeah... Day 5... I see a lot of posts '14/30/365 days without' and I kinda feel small, but the person in his 365 day start where I am. Everyone pass day 5, if they can, I will can. Last time I tried stop, I stop for one week, but I want be the guy who say 'Yeah, day 365, if I did, you can do too'\n\nu/Thundermator, reddit"),
-            Post(header: "Day 5", body: "Feeling good, my goal is big this time, 200+ days, that’s right, 200+ days! I want to aim for 200+ days, I want it! I know I have the strength for it and the willpower! I just have to not entertain negative and sexual thoughts. That’s all! If I can do this I can go for infinite amount of days! Let’s do this, day 5 check! ✅✅✅\n\nu/bruhsir, reddit"),
-            Post(header: "Day 5 💪", body: "Sleep is good. Starting to wake up happy and confident. I'm able to do my studies properly. Started being attentive and more responsive in my classes.\n\nWhat else do you need? Oh, wait! a fine body! Yes, I'm planning to develop a regular home work out routine for myself.\n\nFeelin goooood\n\nu/nofap_u, reddit")
+            Post(header: "Janet Fitch", body: "The phoenix must burn to emerge."),
+            Post(header: "Sri Chinmoy", body: "Not to give up under any circumstances should be the motto of our life: we shall try again and again, and we are bound to succeed. There will be obstacles, but we have to defy them. […] The goal is ahead of you. If you do not give up, you are bound to reach your destined goal."),
+            Post(header: "Aristotle", body: "Patience is bitter, but its fruit is sweet.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 6", body: "So today marks the 6th day in my No-Fap journey, and this is the first time in months that I've ever made it this far. Tomorrow will be the 7th day which is the one week point. So far I haven't really noticed any changes, but my mood has SIGNIFICANTLY improved. I now know my urges and how to control them, so i think i'm just going to ride this out until the 90 day mark, and see what happens.\n\nu/Spare_Ship9489, reddit"),
-            Post(header: "Day 6", body: "Day 6 over. It's been very very easy today since I had school. I was distracted all day and I am happy. I normally fail on day 6 but I didn't. Tomorrow is day 7 which is the furthest I've ever made it and I hope I don't relapse tomorrow and I will try not to. I exercised today too. Day 6 of no fap completed.\n\nu/aceboy69420"),
-            Post(header: "I overcame the urge! Onto day 6", body: "Boys I was able to beat the nightly urge it’s always the worst urge at night! I might have to start sleeping on the floor\n\nu/RJ_Cookies, reddit")
+            Post(header: "Tobias Wolff", body: "We are made to persist. That’s how we find out who we are."),
+            Post(header: "Winston S. Churchill", body: "Success is stumbling from failure to failure with no loss of enthusiasm."),
+            Post(header: "Samuel Johnson", body: "Few things are impossible to diligence and skill. Great works are performed not by strength, but by perseverance.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 7: milestone 1✅✌️", body: "It feels like i am doing it for ages. The urges got reduced. I am feeling more enthusiast active and somewhat guilt free. Of course there are other things but still its type of small victory. Way to go💪\n\nu/blazingblaze76, reddit"),
-            Post(header: "Day 7 - my crush noticed me!!!!!!", body: "Just started working at a brand new store that opened up. Mostly everybody is new and there was the really cute girl in my orientation group. About a week goes by of just super casual “hey” and “good morning” as we walk by each other. We work in different departments so I really never have a natural opportunity to talk to her. Anyways I was sitting out on the patio for my break. I was reading in the sun and bobbing my head to Dreams by Fleetwood Mac which was playing on the outdoor speakers. About 30 mins later when I’m off brake I go and bring some carts to her. As I’m about to walk away she says “hey so I have to ask... what book where you reading out here?” I told her and she said she hadn’t heard of it but then she said I just looked really happy and seemed to have “main character energy”.\n\nWalked away with a super big smile and hit a lil dance once I was by myself :)))) what a dub\n\nI’ll update if anything else happens today!\n\nu/a-sad-chad, reddit"),
-            Post(header: "Anyone is on day 7 here, show yourselves !! 💪🏼💪🏼", body: "After one year of trying and repeatedly succeeding 15 days and sometimes 30 days, here I am again, I want to finish this year by achieving 90 days with a big smile, lets do it one last time 💪🏼✊🏼👊🏼\n\nu/Faspstronaute96, reddit")
+            Post(header: "Abraham Lincoln", body: "I am not concerned that you have fallen – I am concerned that you arise."),
+            Post(header: "Samuel Beckett", body: "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better."),
+            Post(header: "Roopleen", body: "If you have a dream, don’t just sit there. Gather courage to believe that you can succeed and leave no stone unturned to make it a reality.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Hey guys, just a day 8 here but I have one strange technique that has really helped me and wanted to share", body: "This sounds really dumb, but whenever I'm home alone and it's late at night or in the evening, I turn off all the lights and put on some really loud music and dance like a maniac. Hopefully this works for some of you guys too. Stay strong :)\n\nu/r888b77q2, reddit"),
-            Post(header: "Completely new person on Day 8!", body: "I'm feeling so much confidence today I gotta admit I'm uncomfortable with this new me. But growth requires us to get out of our comfort zone and I think this is what's happening to me.\n\nI'm not doing NoFap for female attraction but I'm definitely noticing benefits towards that area (see my previous post for more details on that). I've also noticed that I'm keeping eye contact with people plus I'm walking the streets with my head held high. Most importantly, my concentration in class has improved tremendously and my performance (in my studies) is skyrocketing.\n\nI've been doing NoFap (on Reddit) for four months now but before I joined Reddit for at least a year now. So many relapses over the year has really made me miserable but finding NoFap on Reddit has really made me improve. I don't even feel like relapsing. When the urges come, I embrace them instead of avoiding them. This is how I managed to reach Day 8.\n\nThank you NoFap for your overwhelming support. Best corner of the internet.\n\nu/Coney-Boney, reddit"),
-            Post(header: "Day 8", body: "Day 8 done. Today was a good day. I had a 'strong' morning : finished the book I was reading, then did a workout and after that I took a cold shower. At the end of the afternoon I played some basketball. And in the evening I played some Smash Bros with my brother and we had a lot of fun.\n\nI notice that my self confidence is increasing slowly with time and I'm also more motivated than before. I'm still not at the place I want to be, but I'll get there.\n\nConcerning urges, I didn't have any strong urges. There were some small ones (they're always there), but nothing significant.\n\nSee you tomorrow.\n\nu/Hellow11, reddit")
+            Post(header: "Henry Ward Beecher", body: "The difference between perseverance and obstinacy is, that one often comes from a strong will, and the other from a strong won’t."),
+            Post(header: "Tupac Shakur", body: "Did you hear about the rose that grew from a crack in the concrete? Proving nature’s laws wrong, it learned to walk without having feet. Funny, it seems to by keeping its dreams; it learned to breathe fresh air. Long live the rose that grew from concrete when no one else even cared."),
+            Post(header: "Richelle E. Goodrich", body: "You may be the only person left who believes in you, but it’s enough. It takes just one star to pierce a universe of darkness. Never give up.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 9.. I m going for putting a 0 next to it.. who’s with me.. ???", body: "Motivation...\n\nu/dream_chazer, reddit"),
-            Post(header: "Today is day 9", body: "I haven't experienced urges yet and I'll stay strong. I can't go to school cause I still have a cold, but I'll do all my homework today. Wish me luck!\n\n u/sheluvLuis, reddit"),
-            Post(header: "Day 9 🥳 Done & dusted", body: "🌻\n\nu/shre279, reddit")
+            Post(header: "Confucius", body: "It does not matter how slowly you go as long as you do not stop."),
+            Post(header: "Israelmore Ayivor", body: "Success is not obtained overnight. It comes in installments; you get a little bit today, a little bit tomorrow until the whole package is given out. The day you procrastinate, you lose that day’s success."),
+            Post(header: "Robin Hood", body: "Rise and rise again until lambs become lions")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "DAY 10 AND I SO PROUD OF MYSELF", body: "Here's what i have achieved in these 10 days\n\n1.My body was beginning to recover itself. I usually feel like someone will be sitting on my shoulders if i do that 'thing' but now within 3 days I have completely lost that feeling\n\n2. I usually don't talk to people and I am always in the bad mood but when i stopped doing that 'thing' I suddenly became a guy that wants to be with people all the time , I was more friendly than ever . My family and relatives begin to notice this change that happened to me\n\n3. My body shape have changed . I was at 79 kg and now I AM AT 73 KG (my biggest achievement in my life btw) and my belly is beginning to be flat. I began to workout intensely and I found inner strength and peace\n\n4. My Crush is beginning to show some interest into me. I am having crush with her for 2 years and this is the first time. She talked about what type of guy she like and most of the thing suits me.\n\n5.And the last thing is my grade sky rocketed. I was dumb af but now i feel damn fcking smart. I placed top 30 out of 500 people in the whole school.\n\nAll this won't happen if you guys didn't support me. Everyone in this subreddit helped me in every way. Without you guys , i can't do nothing\n\nAND GOOD LUCK BROTHERS OUT THERE , WE WILL BREAK THIS CURSE TOGETHER\n\nu/i_can_beat_my_devil, reddit"),
-            Post(header: "Today is day 10", body: "I honestly didn't think I'd get past day 3. There have been urges, but I've been keeping myself busy.\n\nI think today will be more challenging because there's that mental aspect of hitting a milestone where your mind wants to let its guard down in accomplishment... I won't let that happen though. Got lots to do today.\n\nFor all those struggling with the urge. Stay strong. Our minds are limitless in what we can do. The only thing holding ourselves back from thinking we can do anything is ourself telling us we can't. It's all bullshit. Just do it!\n\nu/Recommendation_Tasty, reddit"),
-            Post(header: "Day 10!!!", body: "I'm so happy about this streak. Even tho it's not long, I'm proud because it's my longest streak in years. I won't stop and won't break down. This community is so great, I feel so much more confident in my abilities.\n\nu/sheluvLuis, reddit")
+            Post(header: "Robert Strauss", body: "Success is a little like wrestling a gorilla. You don’t quit when you’re tired. You quit when the gorilla is tired."),
+            Post(header: "Roopleen", body: "The world’s greatest achievers have been those who have always stayed focussed on their goals and have been consistent in their efforts."),
+            Post(header: "Roy T. Bennett", body: "Change course, but don’t give up.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 11", body: "Day 11 done. I had no real urges today, which is very nice. I took a cold shower this morning (as every morning) and spent some time reading. In the afternoon I spent most of my time playing videogames (I finally completed Pokémon Diamond :) ). In the evening I had a fun time with my family playing a trivia game. I enjoy life more and more.\n\nSee you tomorrow.\n\nu/Hellow11, reddit"),
-            Post(header: "Day 11", body: "11 days strong and not an end in sight boys 💪 🔥 These urges won’t control me.\n\nu/JapansThirdNuke, reddit"),
-            Post(header: "Day 11 no fap successful.", body: "Successfully completed 11 days of no fap journey.\n\nu/Amit280293, reddit")
+            Post(header: "Margaret Atwood", body: "Water does not resist. Water flows. When you plunge your hand into it, all you feel is a caress. Water is not a solid wall, it will not stop you. But water always goes where it wants to go, and nothing, in the end, can stand against it. Water is patient. Dripping water wears away a stone. Remember that, my child. Remember you are half water. If you can’t go through an obstacle, go around it. Water does."),
+            Post(header: "Jason Mraz", body: "You’re not obligated to win. You’re obligated to keep trying. To the best you can do every day."),
+            Post(header: "Mokokoma Mokhonoana", body: "We love being mentally strong, but we hate situations that allow us to put our mental strength to good use.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 12-I Bagged Her Groceries", body: "The same blonde girl came back to my job again. And I had the courage to ask if she wanted a bag. Lol. And after I finished working I did my beer isle routine. I sparked up some small talk with a girl choosing a beer. Her name is Chanele from South Africa. She's cute with a mask on. Even cuter with it off. Lol. She invited me to a board game place. They were playing DnD. I am a newbie so I didn't get to play this time. But I played Settlers of Catan, met a lot of people and had fun.\n\nu/namozen, reddit"),
-            Post(header: "Day 12, yes!", body: "Doing great people let's keep this up!\n\nu/ConfettiBazooka, reddit"),
-            Post(header: "Nofap day 12 in hard mode", body: "I’m doing pretty good an nofap so far no distractions in my way let’s go !!!!\n\nu/Orlando-Zwarrior, reddit")
+            Post(header: "Charles Haddon Spurgeon", body: "By perseverance the snail reached the ark."),
+            Post(header: "Confucius", body: "The man who moves a mountain begins by carrying away small stones."),
+            Post(header: "Beverly Sills", body: "There are no shortcuts to any place worth going.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 13", body: "Day 13 done. I had a good day today. Started my day with a cold shower and playing on my keyboard. In the afternoon I worked. I spent two hours reading in the evening and finished my book, and after that I spent some time playing a videogame with my brother.\n\nI didn't have any strong urges today, I think mainly because I kept myself busy all day.\n\nI did forget to meditate today, so I'll make sure I won't forgot to do that tomorrow.\n\nAnyhoo, goodnight and until tomorrow.\n\nu/Hellow11, reddit"),
-            Post(header: "Day 13: First Benefit", body: "Normally I feel this benefit on Day 4 but this time it seems to have been a bit delayed. The benefit is increased muscle strength and endurance. Suddenly my push-ups form has gotten better and even when going all the way down to my chest they feel way easier than normally. Also I can do more and faster push-ups now. Edit: Also slightly more energy. It could just be because I am working in a different area today though.\n\nu/OCDACCOUNT123456, reddit"),
-            Post(header: "Ay day 13", body: "I'm never quiten I'm going straight to day 90 and beyond\n\nu/lstpyro, reddit")
+            Post(header: "Christopher Pike", body: "Persistence is the key to solving most mysteries."),
+            Post(header: "Chris Bradford", body: "Seven times down eight times up."),
+            Post(header: "Roy Bennett", body: "Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 14 or 2 weeks!", body: "Its been 2 weeks now. Feeling good & still in control.\n\nAfter 2 weeks of thoughtfulness, meditation & change of habits is that i feel that i dont try to live my life like life is a climb on the ladder. I got stuck in traffic yesterday & i put on some nice music, did some breathing exercises and actually kinda enjoyed being stuck there for a while. Not racing towards goals that are always moving on front of you on the horizon but being more 'here and now' is a nice new mindset that was always something i brushed off as hippie shit, but now im realizing that if im unable to enjoy the state i am in RIGHT NOW, how am i going to enjoy myself in the coming days, weeks or even years from now? \n\nIts hard to type it out for me in a good fashion since im nowhere near a monk or spiritual guide, but something in me feels like it has kinda 'clicked' and my days just keep floating on in a very enjoyable fashion.\n\nfor those that haven't already, try meditation!\n\nu/throwaway786324, reddit"),
-            Post(header: "Day 14. Everyone was staring at me", body: "Because I cut my own hair and it turned out to be funny\n\nu/Flaring_Sagittarius, reddit"),
-            Post(header: "Day 14", body: "Two weeks of NoFap done!\n\nI had an okay day today. I started my morning well with a cold shower and some time playing the keyboard. In the afternoon I visited my grandparents. It was nice to have a chat with them. I also spent a lot of time reading today. At the end of the day I felt a little down. I'm a little stressed about schoolwork and whatnot and it became a little too much. I took some time alone, took a shower and spent five minutes meditating and I feel a lot better now.\n\nAfter two weeks I feel more confident again. I also feel stronger emotions, which I consider a good thing. I feel more motivated to work on myself and become a better person, for myself and the people around me.\n\nNow let's keep going.\n\nSee you tomorrow.\n\nu/Hellow11, reddit")
+            Post(header: "Israelmore Ayivor", body: "It’s just a matter of believing it as possible, and taking the cross millimeter by millimeter."),
+            Post(header: "John Quincy Adams", body: "Courage and perseverance have a magical talisman, before which difficulties disappear and obstacles vanish into air."),
+            Post(header: "Mario Andretti", body: "Desire is the key to motivation, but it’s determination and commitment to an unrelenting pursuit of your goal – a commitment to excellence – that will enable you to attain the success you seek.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 15", body: "Day 15 done with no problems with urges. In the morning I did a short workout, took a cold shower and meditated for a few minutes. After that I went to school. After school I spent some time reading.\n\nI felt pretty lonely today. That's why I took a walk in the evening, gazing at the stars for some time. I find being outside and being amazed by the hugeness of the universe a great way to clear my mind. Overall a good day.\n\nSee you tomorrow\n\nu/Hellow11, reddit"),
-            Post(header: "Day 15 Completed! Now my mind's just playing tricks", body: "'You've already done 2 weeks, one more PMO won't hurt.' - These are the types of tricks my mind is playing now.\n\nIn the first week and a half, the urges felt more like waves. It was more like something I needed to do.\n\nNow it's less of a 'need', and more psychological. It's arguable which one is tougher, but I do think it's gotten easier.\n\nOver time, these types of urges will go away.\n\nOnwards to day 16!\n\nu/iShowerErryDay, reddit"),
-            Post(header: "Day 15", body: "That empty feeling is gone. All of the shame and guilt I felt from addiction is irrelevant now. The constant negative self talk has been silenced and my sense of self worth is gradually resubmerging. I feel like I'm becoming a better person every day. After years of being stuck at emotional rock bottom, I am beginning to feel peace.\n\nThank you all for being so good to one another and helping each other heal <3\n\nu/HariTerra, reddit")
+            Post(header: "Roy T. Bennett", body: "Never lose hope. Storms make people stronger and never last forever."),
+            Post(header: "Maeve Greyson", body: "No one has the power to shatter your dreams unless you give it to them."),
+            Post(header: "Roy T. Bennett", body: "It doesn’t matter how many times you get knocked down. All that matters is you get up one more time than you were knocked down.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 16 !✊", body: "Definitely not getting easier , goin a bit crazy over here but we good, noFap gang\n\nLEESSGGOOO\n\nu/SosaUtakea, reddit"),
-            Post(header: "I’m on day 16 on my first attempt", body: "What really helped me was when I stopped I immediately told myself that PMO was something that I used to do and I don’t do that anymore. I avoided the mindset of 'I’m trying to quit' because then I just see myself as always just trying and not actually quitting. When you have the mindset of 'that’s something I used to do' you start to see yourself as someone who doesn’t PMO and live your day to day life as someone who doesn’t and what that person does vs just trying to quit.\n\nu/saintpablo5, reddit"),
-            Post(header: "Day 16", body: "This is my best streak since I discovered NoFap\n\nDon't worry for me, I won't give up\n\nu/AdrienJrn, reddit")
+            Post(header: "Richelle E. Goodrich", body: "When it comes to fighting for your dreams, be a dragon. Breathe fire."),
+            Post(header: "Pittacus Lore", body: "No. Don’t give up hope just yet. It’s the last thing to go. When you have lost hope, you have lost everything. And when you think all is lost, when all is dire and bleak, there is always hope."),
+            Post(header: "T.F. Hodge", body: "The sky is not my limit… I am.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 17/90", body: "Today i had a bad day , but that doesn’t mean that I relapsed. I had alooooot of urges today but I was strong and I handled the urges💪 (( strength does not come from winning. Your struggles develop ur strength when u go through hardships and decide not to surrender that is strength ))\n\nu/amajmoh, reddit"),
-            Post(header: "Day 17, new record, come on!", body: "-exercise \n-meditation \n-cold shower \n-no boredom\n\nThis is what helped me.\n\nu/WantToGetNoFapper, reddit"),
-            Post(header: "NoFap and Stoicism for Success - Day 17", body: "'The object of life is not to be on the side of the majority, but to escape finding oneself in the ranks of the insane.' - Marcus Aurelius\n\nHope you're all doing well today, NoFap brothers and sisters. Keep fighting the urge and remember that you are far stronger than you think.\n\nu/YoHanan2442, reddit")
+            Post(header: "F. Scott Fitzgerald", body: "Never confuse a single defeat with a final defeat."),
+            Post(header: "Robert Fanney", body: "In my experience, nothing worthwhile has ever really been all that easy. But it certainly has been worthwhile regardless how difficult it seemed."),
+            Post(header: "T. Scott McLeod", body: "Success doesn’t come to you; you go to it.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 18", body: "Day 18. A problemless day again. I did not have any real urges today. I kept myself very busy today. I just studied for three hours straight until 1am, so I'm going to sleep asap. I'm feeling good though.\n\nSee you tomorrow.\n\nu/Hellow11, reddit"),
-            Post(header: "Day 18", body: "Still going strong. Saturdays are the best because I can live my life, see my friends and not have to deal with the stress of my job. Life is good, god is good, thank you guys.\n\nu/CrankLee, reddit"),
-            Post(header: "DAY 18. IM BACK ON TRACK.", body: "Im proud to say that Im back on track. Day 18. After so many attempts I've finally passed the point where I usually lose.\n\nThe past attempts often end on me losing on days 12, 14 or 15. But now I have reached day 18. I am hoping that it gets easier from this point on. It might be a dangerous thing to be cocky this early, but I am at the very least proud that I've reached this point.\n\nI hope you guys are doing well too.\n\nu/DontEvenCareIfUDie, reddit")
+            Post(header: "Imania Margria", body: "If you lose what was most precious to you, never stop fighting for it until you have it once again in your possession."),
+            Post(header: "Roy T. Bennett", body: "Those who win never give up. Those who give up never win."),
+            Post(header: "Kenneth H. Blanchard", body: "When you’re committed to something, you accept no excuses – only results.")
         ],
         [
             Post(header: "", body: ""),
-            Post(header: "Day 19. This shit works", body: "In the 19 days since i started no fap i have more energy, i am more confident, less social anxiety, talking more to girls. I feel stronger and more competitive. I beat up my abusive father. And finally won on a boxing sparring match. Also feeling more grounded and apreciating the little things in life. THIS SHIT WORKS\n\nu/teofurlong, reddit"),
-            Post(header: "Day 19", body: "Hey guys.\n\nI don't know why its been so much harder for me in the past to give up this addiction, but right now its really really easy. Almost 3 weeks in and I feel better knowing that these urges don't control my life. I know its been harder for others but just keep persisting, it gets easier :)\n\nu/1nd333d, reddit"),
-            Post(header: "Day 19: Today I beat my longest streak!", body: "Hey guys and gals. This NoFap journey isn't a easy one but it's so worth it! My longest previous streak was 18 days and today I made it to 19 days! I'm so happy that I've been able to stay this long but there is no way I'm slowing down! I'm gonna carry on and keep on fighting. My main goal is to beat this addiction, not for the benefits, they are a bonus, but to defeat addiction!\n\nStay strong everyone you've got this! 💪\n\nu/ChickenWing3105, reddit")
+            Post(header: "Ben Carson", body: "Success is determined not by whether or not you face obstacles, but by your reaction to them. And if you look at these obstacles as a containing fence, they become your excuse for failure. If you look at them as a hurdle, each one strengthens you for the next."),
+            Post(header: "Harper Lee", body: "Real courage is when you know you’re licked before you begin, but you begin anyway and see it through no matter what."),
+            Post(header: "Criss Jami", body: "The harder you fall, the heavier your heart; the heavier your heart, the stronger you climb; the stronger you climb, the higher your pedestal.")
         ],
         [
             Post(header: "", body: ""),
